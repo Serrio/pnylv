@@ -98,8 +98,8 @@ else // if the form hasn't been submitted, look for an id to redirect to
 <html>
 	<head>
 		<title><?php echo PAGE_TITLE; ?></title>
-		<link rel="shortcut icon" href="/f.ico"/>
-        <meta name="viewport" content="width=450, initial-scale=1.0">
+		<link rel="shortcut icon" href="//i.imgur.com/hPhfmt2.png"/>
+        <meta name="viewport" content="width=450">
 		<style type="text/css">
 		body {
 			font: .8em "Trebuchet MS", Verdana, Arial, Sans-Serif;
@@ -123,7 +123,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		
 		h1 {
 			float: left;
-			background-image: url('/l.png');
+			background-image: url('//i.imgur.com/LYlI7Bt.png');
 			width: 450px;
 			height: 530px;
 			text-indent: 100%;
