@@ -45,7 +45,7 @@ if ( isset($_POST['longurl']) )
 			$url = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'].'?id='.$lilurl->get_id($longurl);
 		}
 
-		$msg = '<p class="success">Your lil&#180; URL is: <a href="'.$url.'">'.$url.'</a></p>';
+		$msg = '<p class="success">Your  URL is: <a href="'.$url.'">'.$url.'</a></p>';
 	}
 	elseif ( !$protocol_ok )
 	{
@@ -53,7 +53,7 @@ if ( isset($_POST['longurl']) )
 	}
 	else
 	{
-		$msg = '<p class="error">Creation of your lil&#180; URL failed for some reason.</p>';
+		$msg = '<p class="error">Creation of your URL failed for some reason.</p>';
 	}
 }
 else // if the form hasn't been submitted, look for an id to redirect to
@@ -83,7 +83,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 		else
 		{
-			$msg = '<p class="error">Sorry, but that lil&#180; URL isn\'t in our database.</p>';
+			$msg = '<p class="error">Sorry, but that URL isn\'t in our database.</p>';
 		}
 	}
 }
@@ -96,37 +96,54 @@ else // if the form hasn't been submitted, look for an id to redirect to
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
-
 	<head>
 		<title><?php echo PAGE_TITLE; ?></title>
-		
+		<link rel="shortcut icon" href="/f.ico"/>
+        <meta name="viewport" content="width=450, initial-scale=1.0">
 		<style type="text/css">
 		body {
 			font: .8em "Trebuchet MS", Verdana, Arial, Sans-Serif;
 			text-align: center;
 			color: #333;
-			background-color: #fff;
-			margin-top: 5em;
+			background-color: #CCA4F9;
+			margin: 1em;
+			padding-top: 160px;
+		}
+		
+		#container {
+			width: 450px;
+			margin: 0 auto;
+		}
+		
+		@media all AND (min-width: 930px) {
+			#container {
+				width: 900px;
+			}
 		}
 		
 		h1 {
-			font-size: 2em;
+			float: left;
+			background-image: url('/l.png');
+			width: 450px;
+			height: 530px;
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
 			padding: 0;
-			margin: 0;
+			margin: -150px 0 1em;
 		}
 
-		h4 {
-			font-size: 1em;
-			font-weight: bold;
+		p {
+			width: 450px;
+			float: left;
 		}
 		
 		form {
-			width: 28em;
+			width: 368px;
 			background-color: #eee;
 			border: 1px solid #ccc;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 1em;
+			padding: 10px;
+			margin-left: 30px;
 		}
 
 		fieldset {
@@ -163,28 +180,22 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 		
 		</style>
-
 	</head>
-	
 	<body onload="document.getElementById('longurl').focus()">
-		
-		<h1><?php echo PAGE_TITLE; ?></h1>
-		
-		<?php echo $msg; ?>
-		
-		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-		
-			<fieldset>
-				<label for="longurl">Enter a long URL:</label>
-				<input type="text" name="longurl" id="longurl" />
-				<input type="submit" name="submit" id="submit" value="Make it lil&#180;!" />
-			</fieldset>
-		
-		</form>
+		<div id="container">
+			<h1><?php echo PAGE_TITLE; ?></h1>
+			<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+				<fieldset>
+					<label for="longurl">Enter a long URL:</label>
+					<input type="text" name="longurl" id="longurl" />
+					<input type="submit" name="submit" id="submit" value="Make it short!" />
+				</fieldset>
+			</form>
+			<?php echo $msg; ?>
 
-		<h4>Powered by <a href="http://lilurl.sourceforge.net">lilURL</a></h4>
-	
+			<p>The official URL shortener of <a href="http://rainbowdash.net">Rainbow Dash Network</a></p>
+			<p>Powered by <a href="http://lilurl.sourceforge.net">lilURL</a></p>
+		</div>
 	</body>
-
 </html>
 		
