@@ -105,7 +105,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 			font: .8em "Trebuchet MS", Verdana, Arial, Sans-Serif;
 			text-align: center;
 			color: #333;
-			background-color: #CCA4F9;
+			background-color: #fff;
 			margin: 1em;
 			padding-top: 160px;
 		}
@@ -144,6 +144,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 			border: 1px solid #ccc;
 			padding: 10px;
 			margin-left: 30px;
+			float: left;
 		}
 
 		fieldset {
