@@ -180,9 +180,15 @@ else // if the form hasn't been submitted, look for an id to redirect to
 			color: #000;
 		}
 		
+		body > p {
+			display: none;
+		}
+		
 		</style>
 	</head>
 	<body onload="document.getElementById('longurl').focus()">
+		<?php echo $msg; ?>
+
 		<div id="container">
 			<h1><?php echo PAGE_TITLE; ?></h1>
 			<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
